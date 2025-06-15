@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:17.5-alpine3.22
+    env_file:
+      - .env
+    networks:
+      - matcha_network
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    env_file:
+      - .env
+    networks:
+      - matcha_network
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app:rw
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    env_file:
+      - .env
+    networks:
+      - matcha_network
+    ports:
+      - 8080:8080 # for now
+    volumes:
+      - ./backend:/app:rw
+    restart: unless-stopped
+networks:
+  matcha_network:
