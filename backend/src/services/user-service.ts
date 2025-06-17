@@ -1,6 +1,6 @@
 import { hash } from 'argon2';
 import { sql } from 'src/db';
-import type { signinSchema } from 'src/schema/signin.schema';
+import type { signinSchema } from 'src/schema/signin-schema';
 import type z from 'zod/v4';
 
 export type User = {

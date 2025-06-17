@@ -1,6 +1,6 @@
 import type { RequestHandler } from 'express';
-import { signinSchema } from 'src/schema/signin.schema';
-import { createUser } from 'src/services/user.service';
+import { signinSchema } from 'src/schema/signin-schema';
+import { createUser } from 'src/services/user-service';
 import { ZodError, z } from 'zod/v4';
 
 export const signup: RequestHandler = async (req, res) => {

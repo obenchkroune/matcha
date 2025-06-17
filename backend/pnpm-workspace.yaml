@@ -1,4 +1,0 @@
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - argon2
-  - esbuild
